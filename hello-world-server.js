@@ -1,6 +1,11 @@
-var http = require('http');
-http.createServer(function handler(req, res) {
-    res.writeHead(200, {'Content-Type': 'text/plain'});
-    res.end('Hello World\n');
-}).listen(1337, '127.0.0.1');
-console.log('Server running at http://127.0.0.1:1337/');
+var express = require('express');
+var app = express();
+
+app.use(function (request, response) {
+	response.writeHead(200, {'Content-Type': 'text/html'});
+	response.end('<h1>Hello express11</h1>');
+});
+
+app.listen(8080, function () {
+	console.log("Server Running at http://127.0.0.1:8080");
+});
